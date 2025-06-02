@@ -6,7 +6,7 @@ export const protectedRoute = async (req, res, next) => {
     const token = req.cookies.jwtToken
     if (!token) {
       res.status(401).json({
-        success: true,
+        success: false,
         message: 'Unauthorized : no token provided',
       })
     }
@@ -15,7 +15,7 @@ export const protectedRoute = async (req, res, next) => {
 
     if (!decoded) {
       res.status(401).json({
-        success: true,
+        success: false,
         message: 'Unauthorized access',
       })
     }
@@ -24,7 +24,7 @@ export const protectedRoute = async (req, res, next) => {
 
     if (!user) {
       res.status(404).json({
-        success: true,
+        success: false,
         message: 'User not found',
       })
     }
@@ -36,7 +36,7 @@ export const protectedRoute = async (req, res, next) => {
     console.log(`Internal server error ${error}`)
 
     res.status(200).json({
-      success: true,
+      success: false,
       message: `Internal server error ${error}`,
     })
   }
