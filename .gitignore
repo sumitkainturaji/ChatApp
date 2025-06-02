@@ -1,0 +1,57 @@
+# ------------------------
+# General
+# ------------------------
+node_modules/
+.env
+.env.local
+.env.*.local
+*.log
+logs/
+*.tmp
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+
+# ------------------------
+# Backend (Server)
+# ------------------------
+server/node_modules/
+server/uploads/
+server/.env
+server/logs/
+server/coverage/
+server/dist/
+server/build/
+
+# ------------------------
+# Frontend (Client)
+# ------------------------
+client/node_modules/
+client/.env
+client/.env.local
+client/.env.*.local
+client/dist/
+client/build/
+client/.next/     # if using Next.js instead of Vite/CRA
+client/.cache/    # Vite or other bundlers
+
+# ------------------------
+# Editor & OS
+# ------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ------------------------
+# Testing & Coverage
+# ------------------------
+coverage/
+*.lcov
+
+# ------------------------
+# Optional: Docker, if used
+# ------------------------
+docker-compose.override.yml
+*.pid
