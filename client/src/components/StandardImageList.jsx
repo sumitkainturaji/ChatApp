@@ -1,21 +1,35 @@
 import * as React from 'react'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
+import chat from '../assets/chat.svg'
+import connect from '../assets/connect.svg'
+import emailcap from '../assets/emailcap.svg'
+import marketing from '../assets/marketing.svg'
+import monusers from '../assets/monusers.svg'
+import people from '../assets/people.svg'
+import swipe from '../assets/swipe.svg'
+import userchat from '../assets/userchat.svg'
+import fingerprint from '../assets/fingerprint.svg'
 
 export default function StandardImageList({ className = '', title, subtitle }) {
   return (
-    <ImageList sx={{ width: 500, height: 500 }} cols={3} rowHeight={164}>
+    <ImageList
+      sx={{ width: 500, height: 500 }}
+      cols={3}
+      rowHeight={164}
+      border={2}
+    >
       {itemData.map((item) => (
         <ImageListItem
           key={item.img}
-          className="overflow-hidden rounded-lg transition-transform hover:scale-105"
+          className="overflow-hidden rounded-lg transition-transform hover:scale-102  border-1 border-[#605dff] "
         >
           <img
-            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+            srcSet={`${item.img}`}
+            src={`${item.img}`}
             alt={item.title}
             loading="lazy"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover p-0.2"
           />
         </ImageListItem>
       ))}
@@ -25,51 +39,39 @@ export default function StandardImageList({ className = '', title, subtitle }) {
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
+    img: chat,
+    title: 'chat',
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
+    img: connect,
+    title: 'connect',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    img: marketing,
     title: 'Camera',
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    img: emailcap,
     title: 'Coffee',
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
+    img: fingerprint,
     title: 'Mushrooms',
   },
   {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
+    img: people,
+    title: 'Hats',
   },
   {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
+    img: swipe,
+    title: 'Honey',
   },
   {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
+    img: userchat,
+    title: 'Basketball',
+  },
+  {
+    img: monusers,
+    title: 'Fern',
   },
 ]
