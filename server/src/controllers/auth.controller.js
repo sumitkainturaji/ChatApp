@@ -99,6 +99,7 @@ export const login = async (req, res) => {
       fullName: user.fullName,
       password: user.password,
       profilepic: user.profilePic,
+      email: user.email,
       success: false,
       message: 'Required all feild',
     })
@@ -132,8 +133,8 @@ export const logout = async (req, res) => {
 
 export const updateProfile = async (req, res) => {
   try {
-    const { profilePic } = req.body
     const userId = req.user._id
+    const { profilePic } = req.body
 
     if (!profilePic) {
       res.status(400).json({
@@ -158,7 +159,11 @@ export const updateProfile = async (req, res) => {
       { new: true }
     )
 
-    res.status(200).json(updatedUser)
+    return res.status(200).json({
+      updatedUser,
+      success: true,
+      message: 'Profile Updated Successfully',
+    })
   } catch (error) {
     console.log('error in update profile')
 
