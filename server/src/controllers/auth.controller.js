@@ -133,8 +133,8 @@ export const logout = async (req, res) => {
 
 export const updateProfile = async (req, res) => {
   try {
-    const userId = req.user._id
     const { profilePic } = req.body
+    const userId = req.user._id
 
     if (!profilePic) {
       res.status(400).json({
